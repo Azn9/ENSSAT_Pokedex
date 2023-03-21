@@ -1,0 +1,16 @@
+<%- include('../partial/header') %>
+
+<div class="m-5 text-white">
+  <%- include('../partial/location', {page: pageTitle}) %>
+
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2">
+    <% pokemonArray.forEach((pokemon) => { %>
+      <%- include('../partial/pokemon.ejs', { pokemon: pokemon, previousPage: currentPage }) %>
+    <% }) %>
+  </div>
+
+  <%- include('../partial/pagination.ejs') %>
+
+</div>
+
+<%- include('../partial/footer.ejs') %>
